@@ -61,6 +61,6 @@ class Command(BaseCommand):
                 )
                 count += 1
             except Exception as e:
-                self.stderr.write(f"❌ Error processing {country.get('name', {}).get('common', 'Unknown')}: {e}")
+                self.stderr.write(f"Error processing {country.get('name', {}).get('common', 'Unknown')}: {e}")
 
-        self.stdout.write(self.style.SUCCESS(f"✅ Successfully saved {count} countries"))
+        self.stdout.write(self.style.SUCCESS(f"Successfully saved {count} countries"))
