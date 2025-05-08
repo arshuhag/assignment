@@ -1,0 +1,45 @@
+from django.db import models
+
+# Create your models here.
+
+class Country(models.Model):
+    name_common = models.CharField(max_length=255)
+    name_official = models.CharField(max_length=255)
+    name_native = models.JSONField(blank=True, null=True)
+    tld = models.JSONField(blank=True, null=True)
+    cca2 = models.CharField(max_length=50)
+    ccn3 = models.CharField(max_length=50)
+    cioc = models.CharField(max_length=50, blank=True, null=True)
+    independent = models.BooleanField(default=False)
+    status = models.CharField(max_length=50)
+    un_member = models.BooleanField(default=False)
+    currencies = models.JSONField(blank=True, null=True)
+    idd = models.JSONField(blank=True, null=True)
+    capital = models.JSONField(blank=True, null=True)
+    alt_spellings = models.JSONField(blank=True, null=True)
+    region = models.CharField(max_length=50)
+    subregion = models.CharField(max_length=50)
+    languages = models.JSONField(blank=True, null=True)
+    latlng = models.JSONField(blank=True, null=True)
+    landlocked = models.BooleanField(default=False)
+    borders = models.JSONField(blank=True, null=True)
+    area = models.FloatField(blank=True, null=True)
+    demonyms = models.JSONField(blank=True, null=True)
+    cca3 = models.CharField(max_length=50)
+    translations = models.JSONField(blank=True, null=True)
+    flag = models.CharField(max_length=255, blank=True, null=True)
+    maps = models.JSONField(blank=True, null=True)
+    population = models.BigIntegerField(blank=True, null=True)
+    gini = models.JSONField(blank=True, null=True)
+    fifa = models.CharField(max_length=50)
+    car = models.JSONField(blank=True, null=True)
+    timezones = models.JSONField(blank=True, null=True)
+    continents = models.JSONField(blank=True, null=True)
+    flags = models.JSONField(blank=True, null=True)
+    coat_of_arms = models.JSONField(blank=True, null=True)
+    startOfWeek = models.CharField(max_length=50)
+    capitalInfo = models.JSONField(blank=True, null=True)
+    postalCode = models.JSONField(blank=True, null=True)
+    
+    def __str__(self):
+        return self.name_common
